@@ -1,0 +1,40 @@
+{
+  "name": "ts-proj-boilerplate",
+  "private": false,
+  "author": "Dee",
+  "scripts": {
+    "test": "jest",
+    "start": "npm run build && node dist/server.js",
+    "start:dev": "nodemon src/server.ts",
+    "build": "babel src/ --out-dir dist --extensions \".ts,.js\"",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "check-types": "tsc",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "npm-run-all --parallel check-types check-format lint test build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.3",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^16.11.10",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "husky": "^4.3.0",
+    "jest": "^27.3.1",
+    "lint-staged": "^10.5.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.1.2"
+  }
+}
